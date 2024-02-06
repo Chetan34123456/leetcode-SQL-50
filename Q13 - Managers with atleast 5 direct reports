@@ -1,0 +1,10 @@
+Title : Managers with atleast 5 direct reports
+Description :
+Write a solution to find managers with at least five direct reports.
+
+Answer :
+select emp1.name from employee as emp1
+cross join employee as emp2 
+on emp1.id = emp2.managerId
+group by emp1.id
+having count(emp2.id) >= 5
